@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Firstgram 用 AI 即時引導背景與人物構圖，幫你第一次就拍到理想畫面。加入等候名單。"
+    />
+    <meta name="theme-color" content="#050606" />
+    <title>Firstgram — 第一次就拍到理想畫面</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">跳到主要內容</a>
+
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="Firstgram 首頁">FIRSTGRAM</a>
+      <nav class="site-nav" aria-label="主要導覽">
+        <a href="#features">功能</a>
+        <a href="#guide">拍攝引導</a>
+        <a class="nav-cta" href="#waitlist">加入等候名單</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <h1 id="hero-title">
+            先對齊背景，<br />
+            <span>再讓人站進理想畫面。</span>
+          </h1>
+          <p>AI 即時引導構圖，第一次就拍到你想要的照片。</p>
+          <a class="primary-button" href="#waitlist">
+            加入等候名單
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M5 12h14M14 7l5 5-5 5" />
+            </svg>
+          </a>
+        </div>
+
+        <div class="hero-media" data-hint-step="0" aria-label="Firstgram 拍攝引導介面示意">
+          <div class="camera-frame">
+            <img
+              src="./assets/firstgram-product-preview.png"
+              alt="Firstgram 在巴黎鐵塔前引導人物與背景構圖的拍攝畫面"
+              width="1024"
+              height="1536"
+            />
+          </div>
+          <div class="focus-corner focus-corner-top" aria-hidden="true"></div>
+          <div class="focus-corner focus-corner-bottom" aria-hidden="true"></div>
+          <button class="camera-coach" id="camera-coach" type="button" aria-label="切換拍攝提示">
+            <span class="camera-coach-dot" aria-hidden="true"></span>
+            <span>
+              <small>即時指引</small>
+              <strong id="camera-coach-text" aria-live="polite">向左一步</strong>
+            </span>
+            <svg aria-hidden="true" viewBox="0 0 24 24">
+              <path d="M5 12h14M14 7l5 5-5 5" />
+            </svg>
+          </button>
+        </div>
+      </section>
+
+      <section class="features section" id="features" aria-labelledby="features-title">
+        <h2 id="features-title">拍之前，就知道怎麼移動</h2>
+        <div class="feature-list">
+          <article class="feature-item">
+            <svg class="feature-icon" aria-hidden="true" viewBox="0 0 48 48">
+              <path d="M7 12h34M7 36h34M12 7v34M36 7v34" />
+              <path class="accent" d="M12 32l8-9 7 6 9-12" />
+            </svg>
+            <h3>背景先對齊</h3>
+            <p>先鎖定地平線、主體與透視，建立理想構圖。</p>
+          </article>
+          <article class="feature-item">
+            <svg class="feature-icon" aria-hidden="true" viewBox="0 0 48 48">
+              <path d="M15 8H8v7M33 8h7v7M15 40H8v-7M33 40h7v-7" />
+              <circle class="accent" cx="24" cy="18" r="4" />
+              <path class="accent" d="M18 37V26c0-3 2-5 6-5s6 2 6 5v11M24 26v11" />
+            </svg>
+            <h3>人物站到位</h3>
+            <p>AI 指引你往哪裡走、站多遠，主角自然融入畫面。</p>
+          </article>
+          <article class="feature-item">
+            <svg class="feature-icon" aria-hidden="true" viewBox="0 0 48 48">
+              <path d="M8 14h32M8 24h32M8 34h32" />
+              <circle class="accent" cx="18" cy="14" r="4" />
+              <circle class="accent" cx="31" cy="24" r="4" />
+              <circle class="accent" cx="22" cy="34" r="4" />
+            </svg>
+            <h3>即時微調</h3>
+            <p>即時調整機位與比例，細節剛剛好。</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="guide section" id="guide" aria-labelledby="guide-title">
+        <div class="guide-copy">
+          <h2 id="guide-title">先抓住風景，<br />再安排主角</h2>
+          <p>
+            Firstgram 先協助你對齊背景：地平線、對稱、比例與視線動線。完成後，再讓人物走進畫面，AI 會持續微調，確保每個元素都在最佳位置。
+          </p>
+        </div>
+
+        <div class="guide-demo" id="guide-demo" data-guide-state="background">
+          <div class="guide-image">
+            <img
+              src="./assets/firstgram-product-preview.png"
+              alt="薄荷綠構圖線協助對齊巴黎鐵塔背景與人物位置"
+              width="1024"
+              height="1536"
+              loading="lazy"
+            />
+            <span class="guide-check" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="m6 12 4 4 8-9" /></svg>
+            </span>
+            <span class="guide-status">
+              <span aria-hidden="true"></span>
+              <strong id="guide-status" aria-live="polite">背景已鎖定</strong>
+            </span>
+          </div>
+          <ol class="guide-steps">
+            <li>
+              <button class="guide-step is-active" type="button" data-guide-step="background" aria-pressed="true">
+                <span>1</span><strong>對齊背景</strong><small>鎖定構圖基準</small>
+              </button>
+            </li>
+            <li>
+              <button class="guide-step" type="button" data-guide-step="person" aria-pressed="false">
+                <span>2</span><strong>安排人物</strong><small>走到 AI 建議位置</small>
+              </button>
+            </li>
+            <li>
+              <button class="guide-step" type="button" data-guide-step="final" aria-pressed="false">
+                <span>3</span><strong>微調完成</strong><small>畫面自然平衡</small>
+              </button>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <section class="waitlist section" id="waitlist" aria-labelledby="waitlist-title">
+        <div class="waitlist-heading">
+          <h2 id="waitlist-title">成為第一批體驗者</h2>
+          <p>留下 Email，Firstgram 開放體驗時，我們會優先通知你。</p>
+        </div>
+
+        <div class="form-shell">
+          <form class="waitlist-form" id="waitlist-form" novalidate>
+            <div class="field">
+              <label for="name">姓名</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                autocomplete="name"
+                aria-describedby="name-error"
+                required
+              />
+              <p class="field-error" id="name-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label for="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                autocomplete="email"
+                inputmode="email"
+                aria-describedby="email-error"
+                required
+              />
+              <p class="field-error" id="email-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label for="instagram">Instagram <span>選填</span></label>
+              <input
+                id="instagram"
+                name="instagram"
+                type="text"
+                autocomplete="off"
+                placeholder="@username"
+              />
+            </div>
+
+            <div class="field">
+              <label for="scenario">希望優先嘗試的拍攝情境 <span>選填</span></label>
+              <select id="scenario" name="scenario">
+                <option value="">請選擇</option>
+                <option value="travel">旅行人像</option>
+                <option value="couple">情侶合照</option>
+                <option value="friends">朋友合照</option>
+                <option value="daily">日常生活</option>
+                <option value="other">其他</option>
+              </select>
+            </div>
+
+            <button class="primary-button submit-button" type="submit">
+              加入等候名單
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <path d="M5 12h14M14 7l5 5-5 5" />
+              </svg>
+            </button>
+
+            <p class="prototype-note">
+              <svg aria-hidden="true" viewBox="0 0 24 24">
+                <rect x="5" y="10" width="14" height="10" rx="2" />
+                <path d="M8 10V7a4 4 0 0 1 8 0v3" />
+              </svg>
+              Prototype 階段，資料不會送出或保存。
+            </p>
+          </form>
+
+          <div class="success-state" id="success-state" role="status" tabindex="-1" hidden>
+            <span class="success-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="m6 12 4 4 8-9" /></svg>
+            </span>
+            <h3>你已加入體驗名單</h3>
+            <p>謝謝你對 Firstgram 感興趣。這是 Prototype，資料未送出或保存。</p>
+            <button class="text-button" id="reset-form" type="button">返回表單</button>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand" href="#top">FIRSTGRAM</a>
+      <p>AI 拍攝引導，第一次就拍到你想要的照片。</p>
+    </footer>
+  </body>
+</html>
