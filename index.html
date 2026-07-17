@@ -2,235 +2,1011 @@
 <html lang="zh-Hant">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1"
+    />
+
     <meta
       name="description"
-      content="Firstgram 用 AI 即時引導背景與人物構圖，幫你第一次就拍到理想畫面。加入等候名單。"
+      content="Firstgram 是 AI 拍照輔助 App，提供物體辨識與 AI 建議兩種模式，即時引導拍攝位置、角度與構圖。"
     />
-    <meta name="theme-color" content="#050606" />
-    <title>Firstgram — 第一次就拍到理想畫面</title>
+
+    <meta name="theme-color" content="#070808" />
+
+    <title>Firstgram｜第一次就拍到理想畫面</title>
+
     <link rel="stylesheet" href="./styles.css" />
+
     <script src="./script.js" defer></script>
   </head>
-  <body>
-    <a class="skip-link" href="#main">跳到主要內容</a>
 
-    <header class="site-header">
-      <a class="brand" href="#top" aria-label="Firstgram 首頁">FIRSTGRAM</a>
-      <nav class="site-nav" aria-label="主要導覽">
-        <a href="#features">功能</a>
-        <a href="#guide">拍攝引導</a>
-        <a class="nav-cta" href="#waitlist">加入等候名單</a>
-      </nav>
+  <body>
+    <!-- 無障礙快速跳轉 -->
+    <a class="skip-link" href="#main">
+      跳到主要內容
+    </a>
+
+    <!-- =========================
+         導覽列
+    ========================== -->
+    <header class="site-header" id="site-header">
+      <div class="header-inner">
+        <a
+          class="brand"
+          href="#top"
+          aria-label="返回 Firstgram 首頁"
+        >
+          FIRSTGRAM
+        </a>
+
+        <button
+          class="menu-toggle"
+          id="menu-toggle"
+          type="button"
+          aria-label="開啟導覽選單"
+          aria-expanded="false"
+          aria-controls="site-nav"
+        >
+          <span></span>
+          <span></span>
+        </button>
+
+        <nav
+          class="site-nav"
+          id="site-nav"
+          aria-label="主要導覽"
+        >
+          <a href="#pain-points">拍照困擾</a>
+          <a href="#modes">功能模式</a>
+          <a href="#guide">拍攝流程</a>
+          <a href="#use-cases">使用情境</a>
+          <a href="#technology">技術亮點</a>
+
+          <a class="nav-cta" href="#waitlist">
+            搶先體驗
+          </a>
+        </nav>
+      </div>
     </header>
 
     <main id="main">
-      <section class="hero" id="top" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <h1 id="hero-title">
-            先對齊背景，<br />
-            <span>再讓人站進理想畫面。</span>
-          </h1>
-          <p>AI 即時引導構圖，第一次就拍到你想要的照片。</p>
-          <a class="primary-button" href="#waitlist">
-            加入等候名單
-            <svg aria-hidden="true" viewBox="0 0 24 24">
-              <path d="M5 12h14M14 7l5 5-5 5" />
-            </svg>
-          </a>
+      <!-- =========================
+           Hero 首頁
+      ========================== -->
+      <section
+        class="hero"
+        id="top"
+        aria-labelledby="hero-title"
+      >
+        <div class="hero-background" aria-hidden="true">
+          <img
+            src="./assets/hero.jpg" 
+            alt=""
+            width="1600"
+            height="1000"
+          />
         </div>
 
-        <div class="hero-media" data-hint-step="0" aria-label="Firstgram 拍攝引導介面示意">
-          <div class="camera-frame">
-            <img
-              src="./assets/firstgram-product-preview.png"
-              alt="Firstgram 在巴黎鐵塔前引導人物與背景構圖的拍攝畫面"
-              width="1024"
-              height="1536"
-            />
+        <div class="hero-overlay" aria-hidden="true"></div>
+
+        <div class="container hero-layout">
+          <div class="hero-copy reveal">
+            <p class="eyebrow">
+              AI PHOTOGRAPHY ASSISTANT
+            </p>
+
+            <h1 id="hero-title">
+              第一次，
+              <br />
+              <span>就拍到理想畫面</span>
+            </h1>
+
+            <p class="hero-description">
+              Firstgram 即時分析拍攝畫面，提供物體辨識與
+              AI 建議兩種模式，幫助任何人快速找到理想構圖。
+            </p>
+
+            <div class="hero-actions">
+              <a
+                class="button button-primary"
+                href="#modes"
+              >
+                探索拍攝模式
+
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                >
+                  <path d="M5 12h14M14 7l5 5-5 5" />
+                </svg>
+              </a>
+
+              <a
+                class="button button-secondary"
+                href="#guide"
+              >
+                觀看使用流程
+
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="m10 8 6 4-6 4Z" />
+                </svg>
+              </a>
+            </div>
+
+            <ul
+              class="hero-highlights"
+              aria-label="Firstgram 特色"
+            >
+              <li>
+                <span class="highlight-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 12h16M12 4v16" />
+                    <circle cx="12" cy="12" r="5" />
+                  </svg>
+                </span>
+
+                <span>
+                  <strong>即時引導</strong>
+                  <small>動態提示移動方向</small>
+                </span>
+              </li>
+
+              <li>
+                <span class="highlight-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M4 8V4h4M16 4h4v4M20 16v4h-4M8 20H4v-4" />
+                    <path d="M8 12h8M12 8v8" />
+                  </svg>
+                </span>
+
+                <span>
+                  <strong>精準構圖</strong>
+                  <small>AI 分析比例與位置</small>
+                </span>
+              </li>
+
+              <li>
+                <span class="highlight-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="m5 12 4 4L19 6" />
+                  </svg>
+                </span>
+
+                <span>
+                  <strong>第一次就上手</strong>
+                  <small>不需要攝影技巧</small>
+                </span>
+              </li>
+            </ul>
           </div>
-          <div class="focus-corner focus-corner-top" aria-hidden="true"></div>
-          <div class="focus-corner focus-corner-bottom" aria-hidden="true"></div>
-          <button class="camera-coach" id="camera-coach" type="button" aria-label="切換拍攝提示">
-            <span class="camera-coach-dot" aria-hidden="true"></span>
-            <span>
-              <small>即時指引</small>
-              <strong id="camera-coach-text" aria-live="polite">向左一步</strong>
-            </span>
-            <svg aria-hidden="true" viewBox="0 0 24 24">
-              <path d="M5 12h14M14 7l5 5-5 5" />
-            </svg>
-          </button>
-        </div>
+
+          <div class="hero-image">
+
+            <img
+                src="./assets/hero.jpg"
+                alt="Firstgram App"
+            >
+
+          </div>
       </section>
 
-      <section class="features section" id="features" aria-labelledby="features-title">
-        <h2 id="features-title">拍之前，就知道怎麼移動</h2>
-        <div class="feature-list">
-          <article class="feature-item">
-            <svg class="feature-icon" aria-hidden="true" viewBox="0 0 48 48">
-              <path d="M7 12h34M7 36h34M12 7v34M36 7v34" />
-              <path class="accent" d="M12 32l8-9 7 6 9-12" />
-            </svg>
-            <h3>背景先對齊</h3>
-            <p>先鎖定地平線、主體與透視，建立理想構圖。</p>
-          </article>
-          <article class="feature-item">
-            <svg class="feature-icon" aria-hidden="true" viewBox="0 0 48 48">
-              <path d="M15 8H8v7M33 8h7v7M15 40H8v-7M33 40h7v-7" />
-              <circle class="accent" cx="24" cy="18" r="4" />
-              <path class="accent" d="M18 37V26c0-3 2-5 6-5s6 2 6 5v11M24 26v11" />
-            </svg>
-            <h3>人物站到位</h3>
-            <p>AI 指引你往哪裡走、站多遠，主角自然融入畫面。</p>
-          </article>
-          <article class="feature-item">
-            <svg class="feature-icon" aria-hidden="true" viewBox="0 0 48 48">
-              <path d="M8 14h32M8 24h32M8 34h32" />
-              <circle class="accent" cx="18" cy="14" r="4" />
-              <circle class="accent" cx="31" cy="24" r="4" />
-              <circle class="accent" cx="22" cy="34" r="4" />
-            </svg>
-            <h3>即時微調</h3>
-            <p>即時調整機位與比例，細節剛剛好。</p>
-          </article>
-        </div>
-      </section>
+      <!-- =========================
+           痛點區塊
+      ========================== -->
+      <section
+        class="section pain-points"
+        id="pain-points"
+        aria-labelledby="pain-title"
+      >
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">PAIN POINT</p>
 
-      <section class="guide section" id="guide" aria-labelledby="guide-title">
-        <div class="guide-copy">
-          <h2 id="guide-title">先抓住風景，<br />再安排主角</h2>
-          <p>
-            Firstgram 先協助你對齊背景：地平線、對稱、比例與視線動線。完成後，再讓人物走進畫面，AI 會持續微調，確保每個元素都在最佳位置。
+            <h2 id="pain-title">
+              你也遇過這些拍照困擾嗎？
+            </h2>
+
+            <p>
+              一張照片不應該反覆重拍，更不應該成為旅行與相處中的壓力。
+            </p>
+          </div>
+
+          <div class="pain-grid">
+            <article class="pain-card reveal">
+              <div class="pain-image">
+                <img
+                  src="./assets/pain-couple.jpg"
+                  alt="拍照者為伴侶拍照卻一直拍不出滿意照片"
+                  width="600"
+                  height="500"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="pain-content">
+                <span class="pain-mark" aria-hidden="true">×</span>
+
+                <p>
+                  拍了很多張，
+                  <br />
+                  還是沒有一張滿意
+                </p>
+              </div>
+            </article>
+
+            <article class="pain-card reveal">
+              <div class="pain-image">
+                <img
+                  src="./assets/pain-eiffel.jpg"
+                  alt="拍攝巴黎鐵塔時人物擋住地標"
+                  width="600"
+                  height="500"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="pain-content">
+                <span class="pain-mark" aria-hidden="true">×</span>
+
+                <p>
+                  地標被擋住，
+                  <br />
+                  畫面不完整
+                </p>
+              </div>
+            </article>
+
+            <article class="pain-card reveal">
+              <div class="pain-image">
+                <img
+                  src="./assets/pain-feet.jpg"
+                  alt="人像照片的腳被畫面裁切"
+                  width="600"
+                  height="500"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="pain-content">
+                <span class="pain-mark" aria-hidden="true">×</span>
+
+                <p>
+                  腳被切掉，
+                  <br />
+                  人物比例不自然
+                </p>
+              </div>
+            </article>
+
+            <article class="pain-card reveal">
+              <div class="pain-image">
+                <img
+                  src="./assets/pain-friends.jpg"
+                  alt="朋友因為反覆拍照而感到疲累"
+                  width="600"
+                  height="500"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="pain-content">
+                <span class="pain-mark" aria-hidden="true">×</span>
+
+                <p>
+                  拍照變成壓力，
+                  <br />
+                  彼此開始不耐煩
+                </p>
+              </div>
+            </article>
+
+            <article class="pain-card reveal">
+              <div class="pain-image">
+                <img
+                  src="./assets/pain-food.jpg"
+                  alt="角度不佳的美食照片"
+                  width="600"
+                  height="500"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="pain-content">
+                <span class="pain-mark" aria-hidden="true">×</span>
+
+                <p>
+                  不知道怎麼拍，
+                  <br />
+                  美食看起來不夠吸引
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <p class="pain-summary reveal">
+            Firstgram 幫助任何人，都能拍出接近理想的照片。
           </p>
         </div>
+      </section>
 
-        <div class="guide-demo" id="guide-demo" data-guide-state="background">
-          <div class="guide-image">
-            <img
-              src="./assets/firstgram-product-preview.png"
-              alt="薄荷綠構圖線協助對齊巴黎鐵塔背景與人物位置"
-              width="1024"
-              height="1536"
-              loading="lazy"
-            />
-            <span class="guide-check" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="m6 12 4 4 8-9" /></svg>
-            </span>
-            <span class="guide-status">
-              <span aria-hidden="true"></span>
-              <strong id="guide-status" aria-live="polite">背景已鎖定</strong>
-            </span>
+      <!-- =========================
+           兩種模式
+      ========================== -->
+      <!-- =========================
+     兩種拍攝模式
+========================== -->
+      <section
+        class="section modes"
+        id="modes"
+        aria-labelledby="modes-title"
+      >
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">TWO MODES</p>
+
+            <h2 id="modes-title">
+              Firstgram 兩種拍攝模式
+            </h2>
+
+            <p>
+              想重現指定照片，或是不知道該怎麼拍，
+              Firstgram 都能提供適合的拍攝協助。
+            </p>
           </div>
-          <ol class="guide-steps">
-            <li>
-              <button class="guide-step is-active" type="button" data-guide-step="background" aria-pressed="true">
-                <span>1</span><strong>對齊背景</strong><small>鎖定構圖基準</small>
-              </button>
+
+          <div class="mode-showcase">
+            <!-- 模式一：物體辨識 -->
+            <article class="mode-feature mode-feature-object reveal">
+              <div class="mode-feature-media">
+                <div class="mode-image-frame">
+                  <img
+                    src="./assets/mode-object.png"
+                    alt="Firstgram 物體辨識模式 App 畫面"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+
+              <div class="mode-feature-copy">
+                <p class="mode-label">
+                  <span>MODE 01</span>
+                  OBJECT RECOGNITION
+                </p>
+
+                <h3>物體辨識模式</h3>
+
+                <p class="mode-feature-subtitle">
+                  重現你喜歡的參考照片
+                </p>
+
+                <p class="mode-feature-description">
+                  上傳一張參考照片，AI 會辨識照片中的地標、建築、
+                  人物與主要物體，並比對目前的即時鏡頭畫面，
+                  引導你還原接近參考照片的位置、距離與拍攝角度。
+                </p>
+
+                <ul class="mode-feature-benefits">
+                  <li>
+                    <span aria-hidden="true">01</span>
+                    <div>
+                      <strong>辨識主要物體</strong>
+                      <p>分析地標、建築、人物及畫面主體。</p>
+                    </div>
+                  </li>
+
+                  <li>
+                    <span aria-hidden="true">02</span>
+                    <div>
+                      <strong>比對參考構圖</strong>
+                      <p>比較主體大小、位置、比例與留白。</p>
+                    </div>
+                  </li>
+
+                  <li>
+                    <span aria-hidden="true">03</span>
+                    <div>
+                      <strong>即時拍攝引導</strong>
+                      <p>提示移動方向、距離與相機角度。</p>
+                    </div>
+                  </li>
+
+                  <li>
+                    <span aria-hidden="true">04</span>
+                    <div>
+                      <strong>完成相似構圖</strong>
+                      <p>構圖達標後，提示使用者按下快門。</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- 模式二：AI 建議 -->
+            <article class="mode-feature mode-feature-suggestion reveal">
+              <div class="mode-feature-media">
+                <div class="mode-image-frame">
+                  <img
+                    src="./assets/mode-ai.png"
+                    alt="Firstgram AI 建議模式 App 畫面"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+
+              <div class="mode-feature-copy">
+                <p class="mode-label">
+                  <span>MODE 02</span>
+                  AI SUGGESTION
+                </p>
+
+                <h3>AI 建議模式</h3>
+
+                <p class="mode-feature-subtitle">
+                  不知道怎麼拍，也沒關係
+                </p>
+
+                <p class="mode-feature-description">
+                  不需要準備參考照片。Firstgram 會即時分析現場光線、
+                  背景、人物比例與畫面留白，直接推薦適合的人物位置、
+                  拍攝方向和手機角度。
+                </p>
+
+                <ul class="mode-feature-benefits">
+                  <li>
+                    <span aria-hidden="true">01</span>
+                    <div>
+                      <strong>分析現場環境</strong>
+                      <p>判斷光線、背景及畫面中的視覺重點。</p>
+                    </div>
+                  </li>
+
+                  <li>
+                    <span aria-hidden="true">02</span>
+                    <div>
+                      <strong>推薦人物位置</strong>
+                      <p>根據環境找出適合的人物站位。</p>
+                    </div>
+                  </li>
+
+                  <li>
+                    <span aria-hidden="true">03</span>
+                    <div>
+                      <strong>提供構圖建議</strong>
+                      <p>調整角度、主體比例與畫面留白。</p>
+                    </div>
+                  </li>
+
+                  <li>
+                    <span aria-hidden="true">04</span>
+                    <div>
+                      <strong>輕鬆完成拍攝</strong>
+                      <p>跟著簡單提示，拍出自然平衡的照片。</p>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================
+           使用流程
+      ========================== -->
+      <section
+        class="section guide"
+        id="guide"
+        aria-labelledby="guide-title"
+      >
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">HOW IT WORKS</p>
+
+            <h2 id="guide-title">
+              如何使用 Firstgram
+            </h2>
+
+            <p>
+              不需要複雜設定，只要跟著四個步驟，就能完成拍攝。
+            </p>
+          </div>
+
+          <ol class="guide-grid">
+            <li class="guide-item reveal">
+              <div class="guide-number">01</div>
+
+              <div class="guide-phone-icon">
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 48 48"
+                >
+                  <rect x="12" y="4" width="24" height="40" rx="5" />
+                  <circle cx="24" cy="34" r="2" />
+                  <path d="M18 17h12M18 23h12" />
+                </svg>
+              </div>
+
+              <div>
+                <h3>選擇模式</h3>
+
+                <p>
+                  選擇物體辨識模式，或 AI 建議模式。
+                </p>
+              </div>
             </li>
-            <li>
-              <button class="guide-step" type="button" data-guide-step="person" aria-pressed="false">
-                <span>2</span><strong>安排人物</strong><small>走到 AI 建議位置</small>
-              </button>
+
+            <li class="guide-item reveal">
+              <div class="guide-number">02</div>
+
+              <div class="guide-phone-icon">
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 48 48"
+                >
+                  <path d="M24 6a18 18 0 1 0 18 18" />
+                  <path d="M24 14v10l7 5" />
+                  <path d="M31 6h11v11" />
+                </svg>
+              </div>
+
+              <div>
+                <h3>AI 分析畫面</h3>
+
+                <p>
+                  AI 分析背景、光線、物體與構圖比例。
+                </p>
+              </div>
             </li>
-            <li>
-              <button class="guide-step" type="button" data-guide-step="final" aria-pressed="false">
-                <span>3</span><strong>微調完成</strong><small>畫面自然平衡</small>
-              </button>
+
+            <li class="guide-item reveal">
+              <div class="guide-number">03</div>
+
+              <div class="guide-phone-icon">
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 48 48"
+                >
+                  <circle cx="24" cy="14" r="5" />
+                  <path d="M16 41V27c0-4 3-7 8-7s8 3 8 7v14" />
+                  <path d="m7 24 6-6M7 24l6 6M41 24l-6-6M41 24l-6 6" />
+                </svg>
+              </div>
+
+              <div>
+                <h3>即時引導</h3>
+
+                <p>
+                  依照提示移動相機、人物或調整角度。
+                </p>
+              </div>
+            </li>
+
+            <li class="guide-item reveal">
+              <div class="guide-number">04</div>
+
+              <div class="guide-phone-icon">
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 48 48"
+                >
+                  <circle cx="24" cy="24" r="18" />
+                  <path d="m15 24 6 6 13-14" />
+                </svg>
+              </div>
+
+              <div>
+                <h3>拍攝完成</h3>
+
+                <p>
+                  構圖達標後，按下快門留下理想照片。
+                </p>
+              </div>
             </li>
           </ol>
         </div>
       </section>
 
-      <section class="waitlist section" id="waitlist" aria-labelledby="waitlist-title">
-        <div class="waitlist-heading">
-          <h2 id="waitlist-title">成為第一批體驗者</h2>
-          <p>留下 Email，Firstgram 開放體驗時，我們會優先通知你。</p>
-        </div>
+      <!-- =========================
+           使用情境
+      ========================== -->
+      <section
+        class="section use-cases"
+        id="use-cases"
+        aria-labelledby="cases-title"
+      >
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">USE CASES</p>
 
-        <div class="form-shell">
-          <form class="waitlist-form" id="waitlist-form" novalidate>
-            <div class="field">
-              <label for="name">姓名</label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                autocomplete="name"
-                aria-describedby="name-error"
-                required
-              />
-              <p class="field-error" id="name-error" aria-live="polite"></p>
-            </div>
+            <h2 id="cases-title">
+              適用各種拍攝情境
+            </h2>
 
-            <div class="field">
-              <label for="email">Email</label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                autocomplete="email"
-                inputmode="email"
-                aria-describedby="email-error"
-                required
-              />
-              <p class="field-error" id="email-error" aria-live="polite"></p>
-            </div>
-
-            <div class="field">
-              <label for="instagram">Instagram <span>選填</span></label>
-              <input
-                id="instagram"
-                name="instagram"
-                type="text"
-                autocomplete="off"
-                placeholder="@username"
-              />
-            </div>
-
-            <div class="field">
-              <label for="scenario">希望優先嘗試的拍攝情境 <span>選填</span></label>
-              <select id="scenario" name="scenario">
-                <option value="">請選擇</option>
-                <option value="travel">旅行人像</option>
-                <option value="couple">情侶合照</option>
-                <option value="friends">朋友合照</option>
-                <option value="daily">日常生活</option>
-                <option value="other">其他</option>
-              </select>
-            </div>
-
-            <button class="primary-button submit-button" type="submit">
-              加入等候名單
-              <svg aria-hidden="true" viewBox="0 0 24 24">
-                <path d="M5 12h14M14 7l5 5-5 5" />
-              </svg>
-            </button>
-
-            <p class="prototype-note">
-              <svg aria-hidden="true" viewBox="0 0 24 24">
-                <rect x="5" y="10" width="14" height="10" rx="2" />
-                <path d="M8 10V7a4 4 0 0 1 8 0v3" />
-              </svg>
-              Prototype 階段，資料不會送出或保存。
+            <p>
+              從旅行、約會到日常記錄，Firstgram 都能提供拍攝協助。
             </p>
-          </form>
+          </div>
 
-          <div class="success-state" id="success-state" role="status" tabindex="-1" hidden>
-            <span class="success-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24"><path d="m6 12 4 4 8-9" /></svg>
-            </span>
-            <h3>你已加入體驗名單</h3>
-            <p>謝謝你對 Firstgram 感興趣。這是 Prototype，資料未送出或保存。</p>
-            <button class="text-button" id="reset-form" type="button">返回表單</button>
+          <div class="case-grid">
+            <article class="case-card reveal">
+              <div class="case-image">
+                <img
+                  src="./assets/use-travel.jpg"
+                  alt="旅客在巴黎鐵塔前拍照"
+                  width="800"
+                  height="700"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="case-content">
+                <span class="case-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 21s7-6 7-12a7 7 0 1 0-14 0c0 6 7 12 7 12Z" />
+                    <circle cx="12" cy="9" r="2" />
+                  </svg>
+                </span>
+
+                <div>
+                  <h3>旅行打卡</h3>
+                  <p>地標完整入鏡，留下美好回憶。</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="case-card reveal">
+              <div class="case-image">
+                <img
+                  src="./assets/use-couple.jpg"
+                  alt="情侶在旅途中自然合照"
+                  width="800"
+                  height="700"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="case-content">
+                <span class="case-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1-1.1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6a5.5 5.5 0 0 0 1-8.8Z" />
+                  </svg>
+                </span>
+
+                <div>
+                  <h3>情侶合照</h3>
+                  <p>拍出自然構圖，減少反覆重拍。</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="case-card reveal">
+              <div class="case-image">
+                <img
+                  src="./assets/use-friends.jpg"
+                  alt="朋友開心地一起合照"
+                  width="800"
+                  height="700"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="case-content">
+                <span class="case-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <circle cx="9" cy="8" r="3" />
+                    <circle cx="17" cy="9" r="2.5" />
+                    <path d="M3 20v-3c0-4 2-6 6-6s6 2 6 6v3M15 13c4 0 6 2 6 5v2" />
+                  </svg>
+                </span>
+
+                <div>
+                  <h3>朋友出遊</h3>
+                  <p>不再反覆重拍，把時間留給相處。</p>
+                </div>
+              </div>
+            </article>
+
+            <article class="case-card reveal">
+              <div class="case-image">
+                <img
+                  src="./assets/use-food.jpg"
+                  alt="經過良好構圖拍攝的美食"
+                  width="800"
+                  height="700"
+                  loading="lazy"
+                />
+              </div>
+
+              <div class="case-content">
+                <span class="case-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M7 3v8M4 3v5c0 2 1 3 3 3s3-1 3-3V3M7 11v10" />
+                    <path d="M17 3c-2 3-2 7 0 10v8M17 3v10h3" />
+                  </svg>
+                </span>
+
+                <div>
+                  <h3>美食記錄</h3>
+                  <p>改善拍攝角度，提升照片質感。</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================
+           AI 技術流程
+      ========================== -->
+      <section
+        class="section technology"
+        id="technology"
+        aria-labelledby="technology-title"
+      >
+        <div class="container">
+          <div class="section-heading reveal">
+            <p class="eyebrow">AI TECHNOLOGY</p>
+
+            <h2 id="technology-title">
+              AI 如何幫助你拍出理想照片？
+            </h2>
+
+            <p>
+              將複雜的影像分析，轉換成簡單而即時的拍攝提示。
+            </p>
+          </div>
+
+          <div class="technology-layout">
+            <ol class="technology-flow">
+              <li class="technology-step reveal">
+                <span class="technology-icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48">
+                    <circle cx="24" cy="24" r="9" />
+                    <path d="M24 5v8M24 35v8M5 24h8M35 24h8" />
+                    <path d="m11 11 6 6M31 31l6 6M37 11l-6 6M17 31l-6 6" />
+                  </svg>
+                </span>
+
+                <h3>物體辨識</h3>
+
+                <p>
+                  辨識畫面中的地標、建築、人物與主要物體。
+                </p>
+              </li>
+
+              <li class="technology-step reveal">
+                <span class="technology-icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48">
+                    <path d="M8 8h32v32H8z" />
+                    <path d="M8 19h32M8 30h32M19 8v32M30 8v32" />
+                  </svg>
+                </span>
+
+                <h3>構圖分析</h3>
+
+                <p>
+                  分析比例、對稱、視線動線與畫面留白。
+                </p>
+              </li>
+
+              <li class="technology-step reveal">
+                <span class="technology-icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48">
+                    <path d="M7 15h34M7 24h34M7 33h34" />
+                    <circle cx="17" cy="15" r="4" />
+                    <circle cx="31" cy="24" r="4" />
+                    <circle cx="21" cy="33" r="4" />
+                  </svg>
+                </span>
+
+                <h3>相似度比對</h3>
+
+                <p>
+                  比較參考照片與目前畫面的構圖差異。
+                </p>
+              </li>
+
+              <li class="technology-step reveal">
+                <span class="technology-icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48">
+                    <path d="M9 24h30M31 16l8 8-8 8" />
+                    <circle cx="15" cy="24" r="6" />
+                  </svg>
+                </span>
+
+                <h3>即時引導</h3>
+
+                <p>
+                  將分析結果轉換成清楚的方向與角度提示。
+                </p>
+              </li>
+
+              <li class="technology-step reveal">
+                <span class="technology-icon" aria-hidden="true">
+                  <svg viewBox="0 0 48 48">
+                    <circle cx="24" cy="24" r="18" />
+                    <path d="m15 24 6 6 13-14" />
+                  </svg>
+                </span>
+
+                <h3>完成拍攝</h3>
+
+                <p>
+                  構圖達標後，即時提示使用者按下快門。
+                </p>
+              </li>
+            </ol>
+
+            <aside class="privacy-card reveal">
+              <span class="privacy-icon" aria-hidden="true">
+                <svg viewBox="0 0 48 48">
+                  <path d="M24 5 39 11v11c0 10-6 17-15 21C15 39 9 32 9 22V11Z" />
+                  <path d="m17 24 5 5 10-12" />
+                </svg>
+              </span>
+
+              <h3>隱私安心</h3>
+
+              <p>
+                照片只用於畫面分析，不會在未經同意的情況下公開或分享。
+              </p>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <!-- =========================
+           等候名單
+      ========================== -->
+      <section
+        class="section waitlist"
+        id="waitlist"
+        aria-labelledby="waitlist-title"
+      >
+        <div class="container">
+          <div class="waitlist-shell reveal">
+            <div class="waitlist-copy">
+              <p class="eyebrow">EARLY ACCESS</p>
+
+              <h2 id="waitlist-title">
+                成為第一批體驗者
+              </h2>
+
+              <p>
+                留下你的 Email，Firstgram 開放體驗時，我們會優先通知你。
+              </p>
+            </div>
+
+            <div class="waitlist-form-shell">
+              <form
+                class="waitlist-form"
+                id="waitlist-form"
+                novalidate
+              >
+                <div class="email-field">
+                  <label class="sr-only" for="email">
+                    Email
+                  </label>
+
+                  <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    inputmode="email"
+                    autocomplete="email"
+                    placeholder="輸入 Email 地址"
+                    aria-describedby="email-error"
+                    required
+                  />
+
+                  <button
+                    class="button button-primary"
+                    type="submit"
+                  >
+                    加入等候名單
+
+                    <svg
+                      aria-hidden="true"
+                      viewBox="0 0 24 24"
+                    >
+                      <path d="M5 12h14M14 7l5 5-5 5" />
+                    </svg>
+                  </button>
+                </div>
+
+                <p
+                  class="field-error"
+                  id="email-error"
+                  aria-live="polite"
+                ></p>
+
+                <p class="prototype-note">
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                  >
+                    <rect
+                      x="5"
+                      y="10"
+                      width="14"
+                      height="10"
+                      rx="2"
+                    />
+                    <path d="M8 10V7a4 4 0 0 1 8 0v3" />
+                  </svg>
+
+                  Prototype 階段，資料不會送出或保存。
+                </p>
+              </form>
+
+              <div
+                class="success-state"
+                id="success-state"
+                role="status"
+                tabindex="-1"
+                hidden
+              >
+                <span class="success-icon" aria-hidden="true">
+                  <svg viewBox="0 0 24 24">
+                    <path d="m6 12 4 4 8-9" />
+                  </svg>
+                </span>
+
+                <div>
+                  <h3>已加入體驗名單</h3>
+
+                  <p>
+                    謝謝你對 Firstgram 感興趣。
+                  </p>
+                </div>
+
+                <button
+                  class="text-button"
+                  id="reset-form"
+                  type="button"
+                >
+                  返回
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </section>
     </main>
 
+    <!-- =========================
+         頁尾
+    ========================== -->
     <footer class="site-footer">
-      <a class="brand" href="#top">FIRSTGRAM</a>
-      <p>AI 拍攝引導，第一次就拍到你想要的照片。</p>
+      <div class="container footer-layout">
+        <div class="footer-brand">
+          <a class="brand" href="#top">
+            FIRSTGRAM
+          </a>
+
+          <p>
+            AI 拍攝引導，第一次就拍到理想畫面。
+          </p>
+        </div>
+
+        <nav class="footer-nav" aria-label="頁尾導覽">
+          <a href="#modes">功能模式</a>
+          <a href="#guide">拍攝流程</a>
+          <a href="#technology">技術亮點</a>
+          <a href="#waitlist">聯絡我們</a>
+        </nav>
+
+        <p class="copyright">
+          © <span id="current-year">2026</span>
+          Firstgram. All rights reserved.
+        </p>
+      </div>
     </footer>
   </body>
 </html>
